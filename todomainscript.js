@@ -1,4 +1,4 @@
-// Todo version 4
+// Todo version 5 
 
 var todoList = {
   todos: [],
@@ -7,28 +7,22 @@ var todoList = {
       console.log('Your todo list is empty!');
     } else {
       console.log('MyTodos:');
-      for(var i = 0; i < this.todos.length; i++){
-        if(this.todos[i].completed === true){
-          console.log('(x)', this.todos[i].todoText);
-        } else {
-        console.log('( )',this.todos[i].todoText);
-      }
+      this.todos.filter(c => c.completed === true)
+                .forEach(c => console.log('(x)', c.todoText));
+      this.todos.filter(c => c.completed === false)
+                .forEach(c => console.log('( )', c.todoText));
     }
-  }
-},
-
+  },
+  
   toggleAll: function(){
-    var completed = this.todos.every(function(c){
-      return c.completed === true;
-  });
+    var completed = this.todos.every(c => 
+        c.completed === true)
     if(completed){
-      this.todos.forEach(function(c){
-        c.completed = false;
-      });
+      this.todos.forEach(c => 
+        c.completed = false);
     } else { 
-      this.todos.forEach(function(c){
-       c.completed = true;
-      });
+      this.todos.forEach(c => 
+       c.completed = true);
     }
     this.displayTodos();
   },
@@ -44,13 +38,16 @@ var todoList = {
     this.todos[position].todoText = todoText;
     this.displayTodos();
   },
-  deleteTodo: function(item,position){
-    this.todos[item].splice(position, 1);
+  deleteTodo: function(position){
+    this.todos.splice(position, 1);
     this.displayTodos();
   },
   toggleCompleted: function(position){
     var todo = this.todos[position];
     todo.completed = !todo.completed;
-    this.displayTodos;
+    this.displayTodos();
   }
 };
+
+
+
