@@ -49,5 +49,13 @@ var todoList = {
   }
 };
 
+let displayTodosButton = document.getElementById('displayTodosButton');
+displayTodosButton.addEventListener('click', function(){
+  todoList.displayTodos()
+});
 
+let toggleAllButton = document.getElementById('toggleAllButton');
+toggleAllButton.addEventListener('click', function(){
+  todoList.toggleAll()
+});
 
