@@ -1,6 +1,6 @@
 // Todo version 5 
 
-var todoList = {
+const todoList = {
   todos: [],
   displayTodos: function(){
     if(this.todos.length === 0){
@@ -15,7 +15,7 @@ var todoList = {
   },
   
   toggleAll: function(){
-    var completed = this.todos.every(c => 
+    let completed = this.todos.every(c => 
         c.completed === true)
     if(completed){
       this.todos.forEach(c => 
@@ -43,7 +43,7 @@ var todoList = {
     this.displayTodos();
   },
   toggleCompleted: function(position){
-    var todo = this.todos[position];
+    let todo = this.todos[position];
     todo.completed = !todo.completed;
     this.displayTodos();
   }
