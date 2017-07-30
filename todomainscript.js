@@ -1,4 +1,4 @@
-// Todo version 5 
+// Todo version 6
 
 const todoList = {
   todos: [],
@@ -49,13 +49,28 @@ const todoList = {
   }
 };
 
-let displayTodosButton = document.getElementById('displayTodosButton');
-displayTodosButton.addEventListener('click', function(){
-  todoList.displayTodos()
-});
-
-let toggleAllButton = document.getElementById('toggleAllButton');
-toggleAllButton.addEventListener('click', function(){
+let handlers = {
+displayTodos: function(){
+  todoList.displayTodos();  
+  },
+toggleAll: function(){
   todoList.toggleAll()
-});
+  }.
+addTodo: function(){
+  let addTodoTextInput = document.getElementById('addTodoTextInput');
+  todoList.addTodo(addTodoTextInput.value);
+  addTodoTextInput = "";
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
 
