@@ -68,7 +68,7 @@ const view = {
   displayTodos: function() {
   let todosUl = document.querySelector('ul'); 
   todosUl.innerHTML = "";
-  todoList.todos.forEach(x => {
+  todoList.todos.forEach((x,i) => {
   let todosLi = document.createElement('li');
   let todoTextWithCompletion = '';
     if(x.completed === true){
@@ -76,12 +76,19 @@ const view = {
     } else {
       todoTextWithCompletion = "( ) " + x.todoText;
     }
+    todosLi.id = i;
     todosLi.textContent = todoTextWithCompletion;
+    todosLi.appendChild(this.createDeleteButton());
     todosUl.appendChild(todosLi);
   });
- }
+ },
+  createDeleteButton: function() {
+    let deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.className = 'deleteButton';
+    return deleteButton;
+  }
 };
-
 
 
 
