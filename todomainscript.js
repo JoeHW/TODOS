@@ -3,13 +3,13 @@
 const todoList = {
 todos: [],
 toggleAll: function(){
-    let completed = this.todos.every(c => 
+    let completed = this.todos.every(c =>
         c.completed === true)
       if(completed){
-      this.todos.forEach(c => 
+      this.todos.forEach(c =>
         c.completed = false);
-      } else { 
-      this.todos.forEach(c => 
+      } else {
+      this.todos.forEach(c =>
        c.completed = true);
     }
    },
@@ -57,14 +57,14 @@ deleteTodo: function(position){
 toggleCompleted: function(){
   let toggleCompletedPositionInput = document.getElementById("toggleCompletedPositionInput");
   todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
-  toggleCompletedPositionInput = "";
+  toggleCompletedPositionInput.value = "";
   view.displayTodos();
- } 
+ }
 };
 
 const view = {
   displayTodos: function() {
-  let todosUl = document.querySelector('ul'); 
+  let todosUl = document.querySelector('ul');
   todosUl.innerHTML = "";
   todoList.todos.forEach((x,i) => {
   let todosLi = document.createElement('li');
@@ -86,19 +86,14 @@ const view = {
     deleteButton.className = 'deleteButton';
     return deleteButton;
  },
-  setUpEventListeners: function() { 
-    let todosUl = document.querySelector('ul'); 
+  setUpEventListeners: function() {
+    let todosUl = document.querySelector('ul');
     todosUl.addEventListener('click', function(event){
     let elementClicked = event.target;
     if(elementClicked.className === 'deleteButton'){
     handlers.deleteTodo(elementClicked.parentNode.id)
-   }});  
+   }});
  }
 }
 
 view.setUpEventListeners();
-
-
-
-
-
