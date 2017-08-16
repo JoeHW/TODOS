@@ -1,1 +1,1 @@
-# TODO List - Essentially a basic vanilla template, ready fot styling
+# TODO List - Basic vanilla template, ready for styling
