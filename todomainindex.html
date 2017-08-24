@@ -7,29 +7,34 @@
   </head>
 
   <body>
+    <div id="title-main">
     <h1>Todo List</h1>
+  </div>
 
-
-    <div>
-      <button onclick="handlers.toggleAll()">Toggle All</button>
+<hr>
+<br>
+    <div class="container">
+      <div class="span6">
+      <button type="button" class="btn btn-secondary" onclick="handlers.toggleAll()">Toggle All</button>
     </div>
-
-    <div>
+  </div>
+<br>
+    <div class="container">
       <button type="button" class="btn btn-secondary" onclick="handlers.addTodo()">Add</button>
-      <input id="addTodoTextInput" type="text">
+      <a><input id="addTodoTextInput" type="text"></a>
     </div>
-
-    <div>
+<br>
+    <div class="container">
       <button type="button" class="btn btn-secondary" onclick="handlers.changeTodo()">Change Todo</button>
-      <input id="changeTodoPositionInput" type="number">
-      <input id="changeTodoTextInput" type="text">
+      <a><input id="changeTodoPositionInput" type="number">
+      <input id="changeTodoTextInput" type="text"></a>
     </div>
-
-    <div>
+<br>
+    <div class="container">
       <button type="button" class="btn btn-secondary" onclick="handlers.toggleCompleted()">Toggle Completed</button>
-      <input id="toggleCompletedPositionInput" type="number">
+      <a><input id="toggleCompletedPositionInput" type="number"></a>
     </div>
-
+<br>
     <ul>
     </ul>
 
