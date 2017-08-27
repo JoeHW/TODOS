@@ -96,4 +96,6 @@ const view = {
  }
 }
 
+
+
 view.setUpEventListeners();
